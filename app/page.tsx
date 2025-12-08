@@ -18,12 +18,12 @@ export default function Home() {
             Shorten your URLs quickly and easily with our tool.
           </p>
           <li className="flex space-x-2">
-            <Link href="/generate">
+            <Link href="/shorten">
               <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-3 rounded-xl cursor-pointer">
                 Try Now
               </button>
             </Link>
-            <Link href="/github">
+            <Link href="https://github.com/Adityakumar626/LinkBits" target="_blank">
               <button className=" hover:bg-blue-500 hover:text-white text-blue-500 outline font-bold py-2 px-3 rounded-xl cursor-pointer">
                 Github
               </button>

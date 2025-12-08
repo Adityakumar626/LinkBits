@@ -9,7 +9,7 @@ export default async function Page({
   const { shorturl } = await params;
 
   const client = await clientPromise; // connect to mongodb
-  const db = client.db(process.env.MONGODB_DB); // use database named "linkbits"
+  const db = client.db(process.env.MONGODB_DB); // use database named 
   const collection = db.collection("url"); // use collection named "url"
 
   const doc = await collection.findOne({ shortUrl: shorturl }); // this checks if the shortUrl already exists in the database

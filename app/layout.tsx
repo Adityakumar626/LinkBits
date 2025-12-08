@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
+import "./global.css";
 import Navbar from "@/components/Navbar";
 
 const geistSans = Geist({
@@ -16,6 +16,9 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "LinkBit - URL Shortener",
   description: "A simple and efficient URL shortening service.",
+  icons: {
+    icon: "public/icon.svg",
+  },
 };
 
 export default function RootLayout({
@@ -25,8 +28,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      {/* <head>
+          <link rel="icon" href="/favicon.ico" />
+        </head> */}
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-purple-50`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-blue-50`}
       >
         <Navbar />
         {children}
