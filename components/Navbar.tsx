@@ -1,6 +1,9 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { Audiowide } from "next/font/google";
+
+const audiowide = Audiowide({ subsets: ["latin"], weight: "400" });
 
 const Navbar = () => {
   return (
@@ -14,7 +17,10 @@ const Navbar = () => {
           height={35}
           className="bg-white rounded-2xl mr-2 p-1"
         />
-        <Link href="/">LinkBits</Link>
+        <Link href="/">
+          Link
+          <span className={`${audiowide.className} text-blue-500 font-bold`}>Bits</span>
+        </Link>
       </div>
       <ul className="flex space-x-4 items-center">
         <Link href="/">
