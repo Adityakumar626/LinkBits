@@ -23,7 +23,10 @@ export default function Home() {
                 Try Now
               </button>
             </Link>
-            <Link href="https://github.com/Adityakumar626/LinkBits" target="_blank">
+            <Link
+              href="https://github.com/Adityakumar626/LinkBits"
+              target="_blank"
+            >
               <button className=" hover:bg-blue-500 hover:text-white text-blue-500 outline font-bold py-2 px-3 rounded-xl cursor-pointer">
                 Github
               </button>
