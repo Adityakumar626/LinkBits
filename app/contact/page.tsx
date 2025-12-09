@@ -2,7 +2,7 @@ import { ChevronDownIcon } from "@heroicons/react/24/solid";
 
 export default function Example() {
   return (
-    <div className="isolate bg-linear-to-t from-gray-950 via-stone-800 to-gray-800 px-6 py-24 sm:py-12 lg:px-8">
+    <div className="isolate bg-linear-to-t from-gray-950 via-stone-800 to-gray-800 px-6 py-24 sm:py-[1.79rem] lg:px-8">
       {/* <div
         aria-hidden="true"
         className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
@@ -59,7 +59,7 @@ export default function Example() {
               />
             </div>
           </div>
-          <div className="sm:col-span-2">
+          {/* <div className="sm:col-span-2">
             <label
               htmlFor="company"
               className="block text-sm/6 font-semibold text-white"
@@ -75,7 +75,7 @@ export default function Example() {
                 className="block w-full rounded-md bg-white/5 px-3.5 py-2 text-base text-white outline-1 -outline-offset-1 outline-white/10 placeholder:text-gray-500 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-500"
               />
             </div>
-          </div>
+          </div> */}
           <div className="sm:col-span-2">
             <label
               htmlFor="email"
