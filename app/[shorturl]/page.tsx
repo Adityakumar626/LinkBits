@@ -22,3 +22,4 @@ export default async function Page({
     redirect(`${process.env.NEXT_PUBLIC_HOST}`);
   }
 }
+  
