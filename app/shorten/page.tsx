@@ -2,13 +2,17 @@
 import Link from "next/link";
 import React, { useState } from "react";
 import { Luckiest_Guy } from "next/font/google";
+import {Delius} from "next/font/google";
 
 const luckiestGuy = Luckiest_Guy({ subsets: ["latin"], weight: "400" });
+const delius = Delius({ subsets: ["latin"], weight: "400" });
 
 const Page = () => {
   const [url, seturl] = useState("");
   const [shortUrl, setshortUrl] = useState("");
   const [generated, setgenerated] = useState("");
+  const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
 
   const generate = async () => {
     const myHeaders = new Headers();
@@ -26,16 +30,31 @@ const Page = () => {
       redirect: "follow",
     };
 
-    fetch("/api/generate", requestOptions)
-      .then((response) => response.json())
-      .then((result) => {
-        seturl("");
-        setshortUrl("");
-        console.log(result);
+    setLoading(true); // Set loading state to true while request is being processed
+
+    try {
+      const response = await fetch("/api/generate", requestOptions);
+      const result = await response.json();
+
+      setLoading(false);
+
+      if (result.success) {
+        // Success: Show the generated URL
         setgenerated(`${process.env.NEXT_PUBLIC_HOST}/${shortUrl}`);
+        setError(""); // Clear any previous error
+      } else {
+        // Error: Show the error message (e.g., "Short URL already exists")
+        setgenerated(""); // Clear the generated URL if error occurs
+        setError(result.message); // Display the error message
         alert(result.message);
-      })
-      .catch((error) => console.error(error));
+      }
+    } catch (error) {
+      console.error("Error:", error);
+      setLoading(false);
+      setError(
+        "An error occurred while generating the short URL. Please try again."
+      );
+    }
   };
 
   return (
@@ -60,7 +79,7 @@ const Page = () => {
           />
           <input
             type="text"
-            placeholder="Enter Your preferred short URL text"
+            placeholder="Enter Your preferred Short URL text"
             className="p-2 focus:outline-sky-400 rounded-md bg-gray-50 border-2 border-sky-500"
             value={shortUrl}
             onChange={(e) => {
@@ -69,13 +88,18 @@ const Page = () => {
           />
           <button
             onClick={generate}
-            className="p-2 rounded-lg text-center bg-blue-600 text-white py-3 cursor-pointer hover:bg-blue-700 "
+            className={`p-2 rounded-lg text-center bg-blue-600 text-white py-3 ${delius.className} cursor-pointer hover:bg-blue-700`}
           >
-            Generate
+            {loading ? (
+              <span>Loading...</span> // Show loading text
+            ) : (
+              "Generate"
+            )}
           </button>
         </div>
+        {/* {error && <div className="text-red-600 text-center mt-4">{error}</div>} */}
         {generated && (
-          <code>
+          <code className="">
             <span className="font-bold">Your shortened URL is:</span>{" "}
             <Link
               href={generated}
