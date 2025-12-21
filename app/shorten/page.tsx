@@ -2,7 +2,7 @@
 import Link from "next/link";
 import React, { useState } from "react";
 import { Luckiest_Guy } from "next/font/google";
-import {Delius} from "next/font/google";
+import { Delius } from "next/font/google";
 
 const luckiestGuy = Luckiest_Guy({ subsets: ["latin"], weight: "400" });
 const delius = Delius({ subsets: ["latin"], weight: "400" });
