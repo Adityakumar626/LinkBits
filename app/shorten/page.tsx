@@ -52,7 +52,7 @@ const Page = () => {
           <input
             type="text"
             placeholder="Enter Your URL"
-            className="p-2 focus:outline-fuchsia-800 rounded-md bg-gray-50"
+            className="p-2 focus:outline-sky-400 rounded-md bg-gray-50 border-2 border-sky-500"
             value={url}
             onChange={(e) => {
               seturl(e.target.value);
@@ -61,7 +61,7 @@ const Page = () => {
           <input
             type="text"
             placeholder="Enter Your preferred short URL text"
-            className="p-2 focus:outline-fuchsia-800 rounded-md bg-gray-50"
+            className="p-2 focus:outline-sky-400 rounded-md bg-gray-50 border-2 border-sky-500"
             value={shortUrl}
             onChange={(e) => {
               setshortUrl(e.target.value);
