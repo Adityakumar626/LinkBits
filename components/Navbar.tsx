@@ -67,7 +67,7 @@ const Navbar = () => {
             <li className="w-full md:w-auto">
               <Link
                 href="/"
-                className="block py-2 px-3 text-white rounded hover:bg-gray-600 transition-colors duration-200 md:bg-transparent md:hover:text-blue-500 md:p-0 w-full text-center md:text-left"
+                className="block py-2 px-3 text-white rounded md:bg-transparent md:hover:text-blue-500 md:p-0 w-full text-center md:text-left"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Home
@@ -76,7 +76,7 @@ const Navbar = () => {
             <li className="w-full md:w-auto">
               <Link
                 href="/shorten"
-                className="block py-2 px-3 text-white rounded hover:bg-gray-600 transition-colors duration-200 md:bg-transparent md:hover:text-blue-500 md:p-0 w-full text-center md:text-left"
+                className="block py-2 px-3 text-white rounded md:bg-transparent md:hover:text-blue-500 md:p-0 w-full text-center md:text-left"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Shorten
@@ -85,7 +85,7 @@ const Navbar = () => {
             <li className="w-full md:w-auto">
               <Link
                 href="/contact"
-                className="block py-2 px-3 text-white rounded hover:bg-gray-600 transition-colors duration-200 md:bg-transparent md:hover:text-blue-500 md:p-0 w-full text-center md:text-left"
+                className="block py-2 px-3 text-white rounded md:bg-transparent md:hover:text-blue-500 md:p-0 w-full text-center md:text-left"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Contact
@@ -93,7 +93,7 @@ const Navbar = () => {
             </li>
 
             {/* Buttons Container - using items-stretch and w-full */}
-            <li className="flex flex-col md:flex-row gap-2 py-2 md:py-0 w-full md:w-auto">
+            <li className="flex flex-col justify-center md:flex-row gap-2 py-2 md:py-0 w-full md:w-auto">
               <Link
                 href="/shorten"
                 className="w-full md:w-auto"
