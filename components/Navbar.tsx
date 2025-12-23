@@ -67,7 +67,7 @@ const Navbar = () => {
             <li className="w-full md:w-auto">
               <Link
                 href="/"
-                className="block py-2 px-3 text-white rounded md:bg-transparent md:hover:text-blue-500 md:p-0 w-full text-center md:text-left"
+                className="block py-2 px-3 text-white rounded hover:bg-gray-600 transition-colors duration-200 md:bg-transparent md:hover:text-blue-500 md:p-0 w-full text-center md:text-left"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Home
@@ -76,12 +76,7 @@ const Navbar = () => {
             <li className="w-full md:w-auto">
               <Link
                 href="/shorten"
-                className="block py-2 px-3 text-white rounded 
-               /* Hover Effects */
-               hover:bg-blue-600 md:hover:bg-transparent md:hover:text-blue-400 
-               /* Smooth Transition */
-               transition-colors duration-200 
-               w-full text-center md:text-left"
+                className="block py-2 px-3 text-white rounded hover:bg-gray-600 transition-colors duration-200 md:bg-transparent md:hover:text-blue-500 md:p-0 w-full text-center md:text-left"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Shorten
@@ -90,7 +85,7 @@ const Navbar = () => {
             <li className="w-full md:w-auto">
               <Link
                 href="/contact"
-                className="block py-2 px-3 text-white rounded hover:bg-gray-600 md:hover:bg-transparent md:hover:text-blue-500 md:p-0 w-full text-center md:text-left"
+                className="block py-2 px-3 text-white rounded hover:bg-gray-600 transition-colors duration-200 md:bg-transparent md:hover:text-blue-500 md:p-0 w-full text-center md:text-left"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Contact
@@ -104,7 +99,7 @@ const Navbar = () => {
                 className="w-full md:w-auto"
                 onClick={() => setIsMenuOpen(false)}
               >
-                <button className="w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-3 rounded-xl transition-colors">
+                <button className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-3 rounded-xl transition-colors">
                   Try Now
                 </button>
               </Link>
