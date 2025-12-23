@@ -3,9 +3,11 @@ import Link from "next/link";
 import React, { useState } from "react";
 import { Luckiest_Guy } from "next/font/google";
 import { Delius } from "next/font/google";
+import { Alfa_Slab_One } from "next/font/google";
 
 const luckiestGuy = Luckiest_Guy({ subsets: ["latin"], weight: "400" });
 const delius = Delius({ subsets: ["latin"], weight: "400" });
+const alfaSlabOne = Alfa_Slab_One({ subsets: ["latin"], weight: "400" });
 
 const Page = () => {
   const [url, seturl] = useState("");
@@ -65,13 +67,16 @@ const Page = () => {
         <h1
           className={`text-3xl font-light text-center mb-4 ${luckiestGuy.className}`}
         >
-          Generate Your Shortened URL
+          Generate Your Shortened{" "}
+          <span className={`text-blue-600 ${alfaSlabOne.className} font-bold`}>
+            URL
+          </span>
         </h1>
         <div className="flex flex-col gap-5">
           <input
             type="text"
             placeholder="Enter Your URL"
-            className="p-2 focus:outline-sky-400 rounded-md bg-gray-50 border-2 border-sky-500"
+            className="p-2 focus:outline-sky-400 focus:scale-105 hover:scale-105 transition-transform duration-100 rounded-md bg-gray-50 border-2 border-sky-500"
             value={url}
             onChange={(e) => {
               seturl(e.target.value);
@@ -80,7 +85,7 @@ const Page = () => {
           <input
             type="text"
             placeholder="Enter Your preferred Short URL text"
-            className="p-2 focus:outline-sky-400 rounded-md bg-gray-50 border-2 border-sky-500"
+            className="p-2 focus:outline-sky-400 focus:scale-105 hover:scale-105 transition-transform duration-100 rounded-md bg-gray-50 border-2 border-sky-500"
             value={shortUrl}
             onChange={(e) => {
               setshortUrl(e.target.value);
@@ -88,10 +93,32 @@ const Page = () => {
           />
           <button
             onClick={generate}
-            className={`p-2 rounded-lg text-center bg-blue-600 text-white py-3 ${delius.className} cursor-pointer hover:bg-blue-700`}
+            className={`p-2 hover:scale-105 transition-transform duration-100 rounded-lg text-center bg-blue-600 text-white py-3 ${delius.className} cursor-pointer hover:bg-blue-700`}
           >
             {loading ? (
-              <span>Loading...</span> // Show loading text
+              <span className="flex justify-center items-center gap-2">
+                Loading...{" "}
+                <svg
+                  className="mr-3 -ml-1 size-5 animate-spin text-white"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                >
+                  <circle
+                    className="opacity-25"
+                    cx="12"
+                    cy="12"
+                    r="10"
+                    stroke="currentColor"
+                    strokeWidth="4"
+                  ></circle>
+                  <path
+                    className="opacity-75"
+                    fill="currentColor"
+                    d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                  ></path>
+                </svg>
+              </span> // Show loading text
             ) : (
               "Generate"
             )}
