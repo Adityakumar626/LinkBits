@@ -3,7 +3,6 @@ import { ChevronDownIcon } from "@heroicons/react/24/solid";
 export default function Example() {
   return (
     <div className="isolate min-h-screen bg-linear-to-t from-gray-950 via-stone-800 to-gray-800 px-6 py-24 sm:py-[1.79rem] lg:px-8">
-
       {/* <div
         aria-hidden="true"
         className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
